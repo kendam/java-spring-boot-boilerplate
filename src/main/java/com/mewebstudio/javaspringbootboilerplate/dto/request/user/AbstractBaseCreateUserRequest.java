@@ -53,13 +53,35 @@ public abstract class AbstractBaseCreateUserRequest {
     @NotBlank(message = "{not_blank}")
     @Size(max = 50, message = "{max_length}")
     @Schema(
-        name = "name",
-        description = "Name of the user",
+            name = "userName",
+            description = "User's userName",
+            type = "String",
+            requiredMode = Schema.RequiredMode.REQUIRED,
+            example = "John"
+    )
+    private String userName;
+
+    @NotBlank(message = "{not_blank}")
+    @Size(max = 50, message = "{max_length}")
+    @Schema(
+        name = "firstName",
+        description = "User's first Name",
         type = "String",
         requiredMode = Schema.RequiredMode.REQUIRED,
         example = "John"
     )
-    private String name;
+    private String firstName;
+
+    @NotBlank(message = "{not_blank}")
+    @Size(max = 50, message = "{max_length}")
+    @Schema(
+            name = "otherName",
+            description = "User's first Name",
+            type = "String",
+            requiredMode = Schema.RequiredMode.NOT_REQUIRED,
+            example = "John"
+    )
+    private String otherName;
 
     @NotBlank(message = "{not_blank}")
     @Size(max = 50, message = "{max_length}")
@@ -71,4 +93,26 @@ public abstract class AbstractBaseCreateUserRequest {
         example = "DOE"
     )
     private String lastName;
+
+    @NotBlank(message = "{not_blank}")
+    @Size(max = 50, message = "{max_length}")
+    @Schema(
+            name = "dateOfBirth",
+            description = "User's Date of Birth",
+            type = "String",
+            requiredMode = Schema.RequiredMode.REQUIRED,
+            example = "1/1/1980"
+    )
+    private String dateOfBirth;
+
+    @NotBlank(message = "{not_blank}")
+    @Size(max = 50, message = "{max_length}")
+    @Schema(
+            name = "gender",
+            description = "User's Gender",
+            type = "String",
+            requiredMode = Schema.RequiredMode.REQUIRED,
+            example = "Male"
+    )
+    private String gender;
 }

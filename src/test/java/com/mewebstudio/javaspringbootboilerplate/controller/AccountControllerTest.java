@@ -53,7 +53,7 @@ class AccountControllerTest {
         assertEquals(HttpStatus.OK, response.getStatusCode());
         assertEquals(user.getId().toString(), response.getBody().getId());
         assertEquals(user.getEmail(), response.getBody().getEmail());
-        assertEquals(user.getName(), response.getBody().getName());
+        assertEquals(user.getUserName(), response.getBody().getUserName());
         assertEquals(user.getLastName(), response.getBody().getLastName());
     }
 

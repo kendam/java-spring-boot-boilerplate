@@ -4,9 +4,9 @@ services:
     container_name: java-spring-boot-boilerplate-postgres
     restart: always
     environment:
-      POSTGRES_DB: app_db
-      POSTGRES_PASSWORD: secret
-      POSTGRES_USER: postgres
+      POSTGRES_DB: parapo
+      POSTGRES_PASSWORD: tempP@ss123
+      POSTGRES_USER: kenny
     ports:
       - '5432:5432'
     volumes:

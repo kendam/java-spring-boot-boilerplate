@@ -89,7 +89,7 @@ class UserControllerTest {
             assertEquals(1, response.getBody().getTotal());
             assertEquals(user.getId().toString(), response.getBody().getItems().get(0).getId());
             assertEquals(user.getEmail(), response.getBody().getItems().get(0).getEmail());
-            assertEquals(user.getName(), response.getBody().getItems().get(0).getName());
+            assertEquals(user.getUserName(), response.getBody().getItems().get(0).getUserName());
             assertEquals(user.getLastName(), response.getBody().getItems().get(0).getLastName());
         }
 
@@ -156,7 +156,7 @@ class UserControllerTest {
             assertEquals(HttpStatus.OK, response.getStatusCode());
             assertEquals(user.getId().toString(), response.getBody().getId());
             assertEquals(user.getEmail(), response.getBody().getEmail());
-            assertEquals(user.getName(), response.getBody().getName());
+            assertEquals(user.getUserName(), response.getBody().getUserName());
         }
 
         @Test
@@ -188,7 +188,7 @@ class UserControllerTest {
             assertEquals(HttpStatus.OK, response.getStatusCode());
             assertEquals(user.getId().toString(), response.getBody().getId());
             assertEquals(user.getEmail(), response.getBody().getEmail());
-            assertEquals(user.getName(), response.getBody().getName());
+            assertEquals(user.getUserName(), response.getBody().getUserName());
         }
 
         @Test

@@ -26,13 +26,23 @@ public abstract class AbstractBaseUpdateUserRequest {
 
     @Size(max = 50, message = "{max_length}")
     @Schema(
-        name = "name",
+        name = "userName",
         description = "Name of the user",
         type = "String",
         requiredMode = Schema.RequiredMode.NOT_REQUIRED,
         example = "John"
     )
-    private String name;
+    private String userName;
+
+    @Size(max = 50, message = "{max_length}")
+    @Schema(
+            name = "firstName",
+            description = "Name of the user",
+            type = "String",
+            requiredMode = Schema.RequiredMode.NOT_REQUIRED,
+            example = "John"
+    )
+    private String firstName;
 
     @Size(max = 50, message = "{max_length}")
     @Schema(
@@ -43,4 +53,24 @@ public abstract class AbstractBaseUpdateUserRequest {
         example = "DOE"
     )
     private String lastName;
+
+    @Size(max = 50, message = "{max_length}")
+    @Schema(
+            name = "gender",
+            description = "User's gender",
+            type = "String",
+            requiredMode = Schema.RequiredMode.NOT_REQUIRED,
+            example = "DOE"
+    )
+    private String gender;
+
+    @Size(max = 50, message = "{max_length}")
+    @Schema(
+            name = "dateOfBirth",
+            description = "User's date of birth",
+            type = "String",
+            requiredMode = Schema.RequiredMode.NOT_REQUIRED,
+            example = "DOE"
+    )
+    private String dateOfBirth;
 }
