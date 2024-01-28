@@ -402,6 +402,9 @@ public class UserService {
         return User.builder()
             .email(request.getEmail())
             .password(passwordEncoder.encode(request.getPassword()))
+                .userName(request.getUserName())
+                .gender(request.getGender())
+                .dateOfBirth(request.getDateOfBirth())
             .firstName(request.getFirstName())
             .lastName(request.getLastName())
             .build();
