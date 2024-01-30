@@ -115,4 +115,26 @@ public abstract class AbstractBaseCreateUserRequest {
             example = "Male"
     )
     private String gender;
+
+    @NotBlank(message = "{not_blank}")
+    @Size(max = 5, message = "{max_length}")
+    @Schema(
+            name = "city_id",
+            description = "City Id",
+            type = "int",
+            requiredMode = Schema.RequiredMode.REQUIRED,
+            example = "1"
+    )
+    private String cityId;
+
+    @NotBlank(message = "{not_blank}")
+    @Size(max = 5, message = "{max_length}")
+    @Schema(
+            name = "state_id",
+            description = "State Id",
+            type = "int",
+            requiredMode = Schema.RequiredMode.REQUIRED,
+            example = "1"
+    )
+    private String stateId;
 }

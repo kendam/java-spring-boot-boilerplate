@@ -17,6 +17,8 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -65,6 +67,26 @@ public class User extends AbstractBaseEntity {
     @Column(name = "avatar", columnDefinition = "text")
     private String avatar;
 
+    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    @JoinColumn(
+            name = "city_id",
+            referencedColumnName = "id",
+            nullable = false,
+            foreignKey = @ForeignKey(name = "fk_cities_city_id")
+    )
+    private City city;
+
+    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    @JoinColumn(
+            name = "state_id",
+            referencedColumnName = "id",
+            nullable = false,
+            foreignKey = @ForeignKey(name = "fk_states_state_id")
+    )
+    private State state;
+
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.DETACH)
     @JoinTable(name = "user_roles",
         joinColumns = @JoinColumn(
@@ -92,6 +114,12 @@ public class User extends AbstractBaseEntity {
     )
     @Builder.Default
     private List<Role> roles = new ArrayList<>();
+
+    @OneToOne(mappedBy = "city", cascade = CascadeType.ALL, orphanRemoval = true)
+    private int cityId;
+
+    @OneToOne(mappedBy = "state", cascade = CascadeType.ALL, orphanRemoval = true)
+    private int stateId;
 
     @OneToOne(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private EmailVerificationToken emailVerificationToken;
