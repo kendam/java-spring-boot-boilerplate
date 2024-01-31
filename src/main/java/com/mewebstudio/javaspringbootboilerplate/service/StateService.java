@@ -66,4 +66,12 @@ public class StateService {
     public Optional<LocationState> getStateById(int stateId){
         return stateRepository.findById(String.valueOf(stateId));
     }
+
+    /**
+     * get state list
+     * @return List
+     */
+    public List<LocationState> getList() {
+        return stateRepository.findAll();
+    }
 }

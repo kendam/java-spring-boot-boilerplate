@@ -91,7 +91,7 @@ public class AppConfig {
                 )
             )
             .info(new Info().title(title).version("1.0").description(description)
-                .termsOfService("https://www.mewebstudio.com")
+                .termsOfService("https://www.ksolutionsng.com")
                 .license(new License().name("Apache 2.0").url("https://springdoc.org")));
     }
 
