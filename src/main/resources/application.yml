@@ -29,7 +29,7 @@ app:
 
 spring:
   application:
-    name: ${APP_NAME:EHR Parapo}
+    name: ${APP_NAME:KSolutions Base}
     description: ${APP_DESCRIPTION:App Description}
   jpa:
     hibernate:
