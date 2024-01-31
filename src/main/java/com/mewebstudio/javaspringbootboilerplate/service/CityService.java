@@ -1,7 +1,6 @@
 package com.mewebstudio.javaspringbootboilerplate.service;
 
 import com.mewebstudio.javaspringbootboilerplate.entity.City;
-import com.mewebstudio.javaspringbootboilerplate.entity.State;
 import com.mewebstudio.javaspringbootboilerplate.exception.NotFoundException;
 import com.mewebstudio.javaspringbootboilerplate.repository.CityRepository;
 import lombok.RequiredArgsConstructor;
@@ -34,7 +33,7 @@ public class CityService {
      */
     public City findByCityName(String cityName) {
         return cityRepository.findByCityName(cityName)
-            .orElseThrow(() -> new NotFoundException(messageSourceService.get("city_not_found")));
+                .orElseThrow(() -> new NotFoundException(messageSourceService.get("city_not_found")));
     }
 
     /**
@@ -57,7 +56,7 @@ public class CityService {
         return cityRepository.saveAll(cityList);
     }
 
-    public Optional<City> getCityById(int cityId){
+    public Optional<City> getCityById(int cityId) {
         return cityRepository.findById(String.valueOf(cityId));
     }
 }

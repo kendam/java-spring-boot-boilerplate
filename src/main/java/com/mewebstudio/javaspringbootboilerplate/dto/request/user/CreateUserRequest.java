@@ -49,4 +49,5 @@ public class CreateUserRequest extends AbstractBaseCreateUserRequest {
     )
     @Builder.Default
     private Boolean isBlocked = false;
+
 }

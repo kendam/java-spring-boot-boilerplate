@@ -1,6 +1,6 @@
 package com.mewebstudio.javaspringbootboilerplate.service;
 
-import com.mewebstudio.javaspringbootboilerplate.entity.State;
+import com.mewebstudio.javaspringbootboilerplate.entity.LocationState;
 import com.mewebstudio.javaspringbootboilerplate.exception.NotFoundException;
 import com.mewebstudio.javaspringbootboilerplate.repository.StateRepository;
 import lombok.RequiredArgsConstructor;
@@ -31,7 +31,7 @@ public class StateService {
      * @param stateName String
      * @return State
      */
-    public State findByStateName(String stateName) {
+    public LocationState findByStateName(String stateName) {
         return stateRepository.findByStateName(stateName)
             .orElseThrow(() -> new NotFoundException(messageSourceService.get("state_not_found")));
     }
@@ -39,21 +39,21 @@ public class StateService {
     /**
      * Create state
      *
-     * @param state State
+     * @param locationState State
      * @return Role
      */
-    public State create(final State state) {
-        return stateRepository.save(state);
+    public LocationState create(final LocationState locationState) {
+        return stateRepository.save(locationState);
     }
 
     /**
      * Save list states.
      *
-     * @param stateList List
+     * @param locationStateList List
      * @return List
      */
-    public List<State> saveList(List<State> stateList) {
-        return stateRepository.saveAll(stateList);
+    public List<LocationState> saveList(List<LocationState> locationStateList) {
+        return stateRepository.saveAll(locationStateList);
     }
 
     /**
@@ -63,7 +63,7 @@ public class StateService {
      * @return State
      */
 
-    public Optional<State> getStateById(int stateId){
+    public Optional<LocationState> getStateById(int stateId){
         return stateRepository.findById(String.valueOf(stateId));
     }
 }

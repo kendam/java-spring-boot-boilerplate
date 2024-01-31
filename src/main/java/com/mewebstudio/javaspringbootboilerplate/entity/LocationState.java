@@ -14,7 +14,7 @@ import lombok.*;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class State extends AbstractBaseEntity {
+public class LocationState extends AbstractBaseIntEntity {
     @Column(name = "state_name", nullable = false)
     private String stateName;
 
